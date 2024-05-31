@@ -1,0 +1,208 @@
+:root {
+  /* Main Colors */
+
+  --clr-card-1: hsl(31, 77%, 52%);
+  --clr-card-2: hsl(184, 100%, 22%);
+  --clr-card-3: hsl(179, 100%, 13%);
+  /* Text Description Special  */
+
+  /* Neutral */
+  --clr-neutral-100: hsl(179, 100%, 13%);
+  --clr-neutral-200: hsl(0, 0%, 95%);
+
+  /* Font Family */
+  --ff-accent: "Big Shoulders Display", sans-serif;
+  --ff-base: "Lexend Deca", sans-serif;
+
+  /* Font Weight */
+  --fw-regular: 400;
+  --fw-bold: 700;
+}
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.8;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+  text-transform: capitalize;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+/* Utilities */
+
+.pd-1 {
+  padding: 2rem;
+}
+.flow * + * {
+  margin-top: 2rem;
+}
+.fs-1 {
+  font-size: 0.875rem;
+}
+.clr-1 {
+  color: var(--clr-card-1);
+}
+.clr-2 {
+  color: var(--clr-card-2);
+}
+.clr-3 {
+  color: var(--clr-card-3);
+}
+.ff-1 {
+  font-family: var(--ff-accent);
+}
+.ff-2 {
+  font-family: var(--ff-base);
+}
+.fw-1 {
+  font-weight: var(--fw-regular);
+}
+/* General Styling */
+body {
+  /* Centering */
+  display: grid;
+  place-content: center;
+  margin: 4rem 1rem;
+  font-family: var(--ff-base);
+  color: var(--clr-neutral-200);
+}
+
+/* Card Styling */
+.card-container {
+  display: grid;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  font-family: var(--ff-base);
+  max-width: 50rem;
+}
+
+.card-1 {
+  background-color: var(--clr-card-1);
+}
+.card-2 {
+  background-color: var(--clr-card-2);
+}
+.card-3 {
+  background-color: var(--clr-card-3);
+}
+
+/* Button Styling */
+
+.content__button {
+  background-color: var(--clr-neutral-200);
+  border: none;
+  text-align: center;
+  border-radius: 1.5rem;
+  padding: 0.725rem 2rem;
+  border: 2px solid transparent; /* Add a transparent border */
+}
+.btn__text {
+  margin: 0;
+}
+
+/* Hover Effect */
+.content__button:hover {
+  cursor: pointer;
+  color: var(--clr-neutral-200);
+  background-color: transparent;
+  border-color: var(--clr-neutral-200) 2px solid;
+}
+
+/* Media Queries */
+@media screen and (min-width: 900px) {
+  body {
+    margin: 0;
+  }
+  .card-container {
+    grid-template-columns: repeat(3, 1fr);
+    height: 22.5rem;
+  }
+  .btn__text {
+    font-size: 0.8rem;
+  }
+  .fs-1 {
+    font-size: 0.7rem;
+  }
+}
